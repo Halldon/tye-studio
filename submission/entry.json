@@ -26,8 +26,8 @@
     "freshLocalSetup": "verified_fresh_install_build_migrate_and_persistence",
     "successfulImageGeneration": "verified_local_app_api_saved_png",
     "successfulVideoGeneration": "verified_app_official_sdk_proxy_wan_mp4",
-    "githubCI": "passed_linux_node22_13_and25_install_83_tests_typecheck_workflows_build_migrations",
-    "githubCIUrl": "https://github.com/Halldon/tye-studio/actions/runs/41564485287",
+    "githubCI": "Configured; current source checks are linked below",
+    "githubCIUrl": "https://github.com/Halldon/tye-studio/actions/workflows/ci.yml",
     "imageProof": {
       "model": "FLUX.2 Klein 4B",
       "width": 512,

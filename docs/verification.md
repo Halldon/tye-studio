@@ -46,7 +46,7 @@ Checked these flows in the actual local app with D1/R2 storage, at 1280×800 and
 - Cmd-K opens the command palette with its search field focused; Enter navigates to the matching action. Search covers projects, models and actual media. Phone composer, inspector and Shots layouts have no horizontal document overflow. The shot inspector's Generate controls use normal flow so they do not cover the prompt field.
 - Exported the seven-file project, imported it into a new project and exported again. SHA-256 comparisons confirm all seven media files are unchanged, every asset received a fresh ID, and parent links were remapped correctly. The restored three-version family includes the accepted editable text layer; Shots and the two-second Sequence clip also reopen correctly. Invalid/oversized archives fail preflight, and an unexpected later storage failure identifies its partial project instead of claiming a complete restore.
 
-Screenshots and deterministic QA fixtures remain outside the published application. Generation success, new model compatibility and provider billing remain unverified because the account's API submission was denied.
+Screenshots and deterministic QA fixtures remain outside the published application. At this UI-check checkpoint, successful inference was still unverified after the Cloud API denial; the subsequent local execution proofs below establish successful native and SDK runs. Cloud billing/plan eligibility remains unverified.
 
 ## Challenge source and reproducibility — November 2, 2026
 
