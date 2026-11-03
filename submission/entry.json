@@ -24,8 +24,20 @@
   "verification": {
     "workflowStructure": "verified_offline",
     "freshLocalSetup": "verified_fresh_install_build_migrate_and_persistence",
-    "successfulImageGeneration": "verification_in_progress",
-    "successfulVideoGeneration": "unverified"
+    "successfulImageGeneration": "verified_local_app_api_saved_png",
+    "successfulVideoGeneration": "unverified",
+    "githubCI": "passed_linux_install_83_tests_typecheck_workflows_build_migrations",
+    "githubCIUrl": "https://github.com/Halldon/tye-studio/actions/runs/41563840444",
+    "imageProof": {
+      "model": "FLUX.2 Klein 4B",
+      "width": 512,
+      "height": 512,
+      "steps": 4,
+      "seed": 424242,
+      "nativeElapsedSeconds": 31.834,
+      "bytes": 278550,
+      "sha256": "2388e171fdb59484af9bd561a2532a1e3b21c85af21b5b42338faf95ba0a2214"
+    }
   },
   "participation": {
     "signupStatus": "delivery_retrying_not_confirmed",

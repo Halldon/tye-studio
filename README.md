@@ -4,6 +4,8 @@ An open-source image and video workspace powered by ComfyUI. Create images and s
 
 Tye Studio uses the official `@comfyorg/sdk` Fetch transport on the server. The creator interface is independent of the ComfyUI frontend. No model weights, provider credentials, competitor screenshots or generated examples are bundled.
 
+Source: [Halldon/tye-studio](https://github.com/Halldon/tye-studio). [GitHub CI](https://github.com/Halldon/tye-studio/actions/workflows/ci.yml) checks tests, TypeScript, workflow exports, production builds and repeatable local migrations.
+
 Standalone ComfyUI API graphs, model requirements and engine setup are documented in [workflows/README.md](workflows/README.md). Run `npm run workflows:check` to verify the checked-in graphs match the app's builder.
 
 ## Features
