@@ -1,0 +1,35 @@
+{
+  "generator": "Built-in image_gen",
+  "revision": 2,
+  "reason": "Make the illustration's subject clearly communicate the associated task.",
+  "reference": "https://x.com/samstooff/status/2117241314127319313",
+  "styleReference": "outputs/generated-artwork/create-image.png",
+  "originalSize": [
+    1536,
+    1024
+  ],
+  "servedSize": [
+    768,
+    512
+  ],
+  "assets": [
+    {
+      "key": "create-image-v2",
+      "prompt": "Use case: stylized-concept. Asset type: one landscape 3:2 starter-card illustration for Tye Studio, an image/video creation app. Input image 1 is ONLY a style/palette reference. Create ORIGINAL artwork with the same rough risograph ink, wax crayon grain, slightly misregistered pastel colors and cut-paper edges. This time the illustration MUST clearly communicate the card's function through a recognizable subject. Do not make an abstract wallpaper. Flat tactile printed illustration, not a glossy 3D render and not a thin vector icon. Shared palette: dusty sky blue, pale lilac, faded coral, butter yellow, mint, warm ivory, tiny charcoal details. Spacious simple ivory/pale-lilac paper backdrop. Put the complete hero object within the middle 65% of the image so it also reads in a centered square thumbnail. Big clear silhouette, readable at 100px. No words, letters, numbers, captions, brand logos, watermarks, web UI or buttons. One finished artwork, no triptych or labeled design sheet.\nCard function: CREATE IMAGE. Draw a large, unmistakable rectangular landscape picture with a thick hand-cut ivory paper frame, slightly tilted. Inside the picture are dusty-blue mountains, a butter-yellow sun, coral foreground hills and one small mint tree. A second blank lilac paper sheet peeks out behind it. The finished landscape picture is the main subject, occupying the center, with a couple of dry pastel pigment marks beside it. This should immediately read as making a beautiful new image. Preserve obvious picture-frame edges and actual recognizable scenery.",
+      "original": "outputs/generated-artwork/create-image-v2.png",
+      "served": "public/graphics/create-image-v2.webp"
+    },
+    {
+      "key": "create-video-v2",
+      "prompt": "Use case: stylized-concept. Asset type: one landscape 3:2 starter-card illustration for Tye Studio, an image/video creation app. Input image 1 is ONLY a style/palette reference. Create ORIGINAL artwork with the same rough risograph ink, wax crayon grain, slightly misregistered pastel colors and cut-paper edges. This time the illustration MUST clearly communicate the card's function through a recognizable subject. Do not make an abstract wallpaper. Flat tactile printed illustration, not a glossy 3D render and not a thin vector icon. Shared palette: dusty sky blue, pale lilac, faded coral, butter yellow, mint, warm ivory, tiny charcoal details. Spacious simple ivory/pale-lilac paper backdrop. Put the complete hero object within the middle 65% of the image so it also reads in a centered square thumbnail. Big clear silhouette, readable at 100px. No words, letters, numbers, captions, brand logos, watermarks, web UI or buttons. One finished artwork, no triptych or labeled design sheet.\nCard function: CREATE VIDEO. Draw an unmistakable short curved strip of cinema film with visible charcoal sprocket holes along top and bottom and THREE neighboring rectangular frames. Within each frame show the SAME simple blue landscape and a coral bird in a different position/wing pose, making frame-to-frame motion obvious. The filmstrip is the centered main subject, gently curving, printed in tactile cut-paper and crayon textures. Butter-yellow and pale lilac backing, mint and blue frame scenes. No arrows or play-button icon; the filmstrip and consecutive moving frames must communicate video.",
+      "original": "outputs/generated-artwork/create-video-v2.png",
+      "served": "public/graphics/create-video-v2.webp"
+    },
+    {
+      "key": "edit-image-v2",
+      "prompt": "Use case: stylized-concept. Asset type: one landscape 3:2 starter-card illustration for Tye Studio, an image/video creation app. Input image 1 is ONLY a style/palette reference. Create ORIGINAL artwork with the same rough risograph ink, wax crayon grain, slightly misregistered pastel colors and cut-paper edges. This time the illustration MUST clearly communicate the card's function through a recognizable subject. Do not make an abstract wallpaper. Flat tactile printed illustration, not a glossy 3D render and not a thin vector icon. Shared palette: dusty sky blue, pale lilac, faded coral, butter yellow, mint, warm ivory, tiny charcoal details. Spacious simple ivory/pale-lilac paper backdrop. Put the complete hero object within the middle 65% of the image so it also reads in a centered square thumbnail. Big clear silhouette, readable at 100px. No words, letters, numbers, captions, brand logos, watermarks, web UI or buttons. One finished artwork, no triptych or labeled design sheet.\nCard function: EDIT IMAGE. Draw a clearly framed landscape picture with blue mountains and a yellow sun, being edited: a large tactile painter's brush lies diagonally across its lower-right corner and lays down one coral paint stroke over part of the picture. Add two clear charcoal L-shaped crop corners around the picture. A torn mint paper layer partly overlaps one edge, suggesting layers. The actual picture, brush and crop corners must be unmistakable and central. Rough printed pigments and handmade paper fibers, no UI screen, no abstract wallpaper.",
+      "original": "outputs/generated-artwork/edit-image-v2.png",
+      "served": "public/graphics/edit-image-v2.webp"
+    }
+  ]
+}

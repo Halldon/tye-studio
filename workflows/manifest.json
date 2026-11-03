@@ -1,0 +1,362 @@
+{
+  "format": "ComfyUI API node dictionary",
+  "generator": "scripts/export-workflows.mjs",
+  "schemaVersion": 1,
+  "source": {
+    "file": "app/lib/server/recipes.ts",
+    "sha256": "c0e9ac24aff385e4b3c0745a36b85883a407a748bea0435c53b7de0ca12f0649"
+  },
+  "verification": "Offline structural and deterministic export checks only; no engine execution or GPU compatibility claim.",
+  "workflows": [
+    {
+      "defaults": {
+        "height": 1024,
+        "steps": 8,
+        "width": 1024
+      },
+      "file": "z-image-turbo.api.json",
+      "inputs": [],
+      "kind": "image",
+      "models": {
+        "clip": {
+          "alternatives": [
+            "qwen_3_4b.safetensors"
+          ],
+          "selected": "qwen_3_4b.safetensors"
+        },
+        "unet": {
+          "alternatives": [
+            "z_image_turbo_bf16.safetensors"
+          ],
+          "selected": "z_image_turbo_bf16.safetensors"
+        },
+        "vae": {
+          "alternatives": [
+            "ae.safetensors"
+          ],
+          "selected": "ae.safetensors"
+        }
+      },
+      "nodeCount": 10,
+      "outputNodeId": "99",
+      "outputType": "SaveImage",
+      "recipeId": "z-image-turbo",
+      "scenario": "Text to image",
+      "seed": 424242,
+      "sha256": "7a43f8f9da6536b9edd27daae1cb19fda31d6f5fa845ba9d3348acae8577d06c",
+      "sourceUrl": "https://docs.comfy.org/tutorials/image/z-image/z-image-turbo"
+    },
+    {
+      "defaults": {
+        "height": 1024,
+        "steps": 4,
+        "width": 1024
+      },
+      "file": "flux-klein-4b.api.json",
+      "inputs": [],
+      "kind": "image",
+      "models": {
+        "clip": {
+          "alternatives": [
+            "qwen_3_4b.safetensors"
+          ],
+          "selected": "qwen_3_4b.safetensors"
+        },
+        "unet": {
+          "alternatives": [
+            "flux-2-klein-4b-fp8.safetensors",
+            "flux-2-klein-4b.safetensors"
+          ],
+          "selected": "flux-2-klein-4b-fp8.safetensors"
+        },
+        "vae": {
+          "alternatives": [
+            "flux2-vae.safetensors"
+          ],
+          "selected": "flux2-vae.safetensors"
+        }
+      },
+      "nodeCount": 13,
+      "outputNodeId": "99",
+      "outputType": "SaveImage",
+      "recipeId": "flux-klein-4b",
+      "scenario": "Text to image",
+      "seed": 424242,
+      "sha256": "8bed6b9bbf2f9421bb115971fdb31586d9a080748f66c2ab101a184f6c3b8552",
+      "sourceUrl": "https://docs.comfy.org/tutorials/flux/flux-2-klein"
+    },
+    {
+      "defaults": {
+        "height": 1024,
+        "steps": 4,
+        "width": 1024
+      },
+      "file": "flux-klein-edit.api.json",
+      "inputs": [
+        {
+          "filename": "tye-reference-1.png",
+          "role": "reference"
+        }
+      ],
+      "kind": "image",
+      "models": {
+        "clip": {
+          "alternatives": [
+            "qwen_3_4b.safetensors"
+          ],
+          "selected": "qwen_3_4b.safetensors"
+        },
+        "unet": {
+          "alternatives": [
+            "flux-2-klein-4b-fp8.safetensors",
+            "flux-2-klein-4b.safetensors"
+          ],
+          "selected": "flux-2-klein-4b-fp8.safetensors"
+        },
+        "vae": {
+          "alternatives": [
+            "flux2-vae.safetensors"
+          ],
+          "selected": "flux2-vae.safetensors"
+        }
+      },
+      "nodeCount": 19,
+      "outputNodeId": "99",
+      "outputType": "SaveImage",
+      "recipeId": "flux-klein-edit",
+      "scenario": "Single reference edit",
+      "seed": 424242,
+      "sha256": "d1110d7263ee937d7040a369152947e64601276fec83d8b8334f71e6b6e3718f",
+      "sourceUrl": "https://docs.comfy.org/tutorials/flux/flux-2-klein"
+    },
+    {
+      "defaults": {
+        "height": 1024,
+        "steps": 40,
+        "width": 1024
+      },
+      "file": "qwen-image-edit.api.json",
+      "inputs": [
+        {
+          "filename": "tye-reference-1.png",
+          "role": "reference"
+        }
+      ],
+      "kind": "image",
+      "models": {
+        "clip": {
+          "alternatives": [
+            "qwen_2.5_vl_7b_fp8_scaled.safetensors"
+          ],
+          "selected": "qwen_2.5_vl_7b_fp8_scaled.safetensors"
+        },
+        "unet": {
+          "alternatives": [
+            "qwen_image_edit_2511_fp8mixed.safetensors",
+            "qwen_image_edit_2511_bf16.safetensors"
+          ],
+          "selected": "qwen_image_edit_2511_fp8mixed.safetensors"
+        },
+        "vae": {
+          "alternatives": [
+            "qwen_image_vae.safetensors"
+          ],
+          "selected": "qwen_image_vae.safetensors"
+        }
+      },
+      "nodeCount": 15,
+      "outputNodeId": "99",
+      "outputType": "SaveImage",
+      "recipeId": "qwen-image-edit",
+      "scenario": "Single reference edit",
+      "seed": 424242,
+      "sha256": "cff0fb4a84e13315092aa19aba9aac9f1cc918861b219592ed7fbfbe8d1000d8",
+      "sourceUrl": "https://docs.comfy.org/tutorials/image/qwen/qwen-image-edit-2511"
+    },
+    {
+      "defaults": {
+        "height": 1024,
+        "steps": 40,
+        "width": 1024
+      },
+      "file": "qwen-image-edit-multi-reference.api.json",
+      "inputs": [
+        {
+          "filename": "tye-reference-1.png",
+          "role": "reference"
+        },
+        {
+          "filename": "tye-reference-2.png",
+          "role": "reference"
+        },
+        {
+          "filename": "tye-reference-3.png",
+          "role": "reference"
+        }
+      ],
+      "kind": "image",
+      "models": {
+        "clip": {
+          "alternatives": [
+            "qwen_2.5_vl_7b_fp8_scaled.safetensors"
+          ],
+          "selected": "qwen_2.5_vl_7b_fp8_scaled.safetensors"
+        },
+        "unet": {
+          "alternatives": [
+            "qwen_image_edit_2511_fp8mixed.safetensors",
+            "qwen_image_edit_2511_bf16.safetensors"
+          ],
+          "selected": "qwen_image_edit_2511_fp8mixed.safetensors"
+        },
+        "vae": {
+          "alternatives": [
+            "qwen_image_vae.safetensors"
+          ],
+          "selected": "qwen_image_vae.safetensors"
+        }
+      },
+      "nodeCount": 17,
+      "outputNodeId": "99",
+      "outputType": "SaveImage",
+      "recipeId": "qwen-image-edit",
+      "scenario": "Three reference edit",
+      "seed": 424242,
+      "sha256": "1a53e24ba9294939a8f9ec96fbd2a1c9fe2786fc21e527ccfba21560451b29cf",
+      "sourceUrl": "https://docs.comfy.org/tutorials/image/qwen/qwen-image-edit-2511"
+    },
+    {
+      "defaults": {
+        "height": 1024,
+        "steps": 40,
+        "width": 1024
+      },
+      "file": "qwen-image-edit-masked.api.json",
+      "inputs": [
+        {
+          "filename": "tye-reference-1.png",
+          "role": "reference"
+        },
+        {
+          "filename": "tye-mask.png",
+          "role": "transparent-selected-alpha-mask"
+        }
+      ],
+      "kind": "image",
+      "models": {
+        "clip": {
+          "alternatives": [
+            "qwen_2.5_vl_7b_fp8_scaled.safetensors"
+          ],
+          "selected": "qwen_2.5_vl_7b_fp8_scaled.safetensors"
+        },
+        "unet": {
+          "alternatives": [
+            "qwen_image_edit_2511_fp8mixed.safetensors",
+            "qwen_image_edit_2511_bf16.safetensors"
+          ],
+          "selected": "qwen_image_edit_2511_fp8mixed.safetensors"
+        },
+        "vae": {
+          "alternatives": [
+            "qwen_image_vae.safetensors"
+          ],
+          "selected": "qwen_image_vae.safetensors"
+        }
+      },
+      "nodeCount": 17,
+      "outputNodeId": "99",
+      "outputType": "SaveImage",
+      "recipeId": "qwen-image-edit",
+      "scenario": "Instruction edit with masked compositing",
+      "seed": 424242,
+      "sha256": "472099f21bb14f93b5ec895a915e729efc263daa0e8ce4c799bc8967f8ce1654",
+      "sourceUrl": "https://docs.comfy.org/tutorials/image/qwen/qwen-image-edit-2511"
+    },
+    {
+      "defaults": {
+        "duration": 2,
+        "fps": 24,
+        "height": 480,
+        "steps": 20,
+        "width": 832
+      },
+      "file": "wan-2.2-5b-text-to-video.api.json",
+      "inputs": [],
+      "kind": "video",
+      "models": {
+        "clip": {
+          "alternatives": [
+            "umt5_xxl_fp8_e4m3fn_scaled.safetensors"
+          ],
+          "selected": "umt5_xxl_fp8_e4m3fn_scaled.safetensors"
+        },
+        "unet": {
+          "alternatives": [
+            "wan2.2_ti2v_5B_fp16.safetensors"
+          ],
+          "selected": "wan2.2_ti2v_5B_fp16.safetensors"
+        },
+        "vae": {
+          "alternatives": [
+            "wan2.2_vae.safetensors"
+          ],
+          "selected": "wan2.2_vae.safetensors"
+        }
+      },
+      "nodeCount": 11,
+      "outputNodeId": "99",
+      "outputType": "SaveVideo",
+      "recipeId": "wan-2.2-5b",
+      "scenario": "Text to video",
+      "seed": 424242,
+      "sha256": "5ca7e7203d97e48a08090ad4b148ecb659daec9ebe7a980b65334ed56d89f496",
+      "sourceUrl": "https://docs.comfy.org/tutorials/video/wan/wan2_2"
+    },
+    {
+      "defaults": {
+        "duration": 2,
+        "fps": 24,
+        "height": 480,
+        "steps": 20,
+        "width": 832
+      },
+      "file": "wan-2.2-5b-image-to-video.api.json",
+      "inputs": [
+        {
+          "filename": "tye-reference-1.png",
+          "role": "reference"
+        }
+      ],
+      "kind": "video",
+      "models": {
+        "clip": {
+          "alternatives": [
+            "umt5_xxl_fp8_e4m3fn_scaled.safetensors"
+          ],
+          "selected": "umt5_xxl_fp8_e4m3fn_scaled.safetensors"
+        },
+        "unet": {
+          "alternatives": [
+            "wan2.2_ti2v_5B_fp16.safetensors"
+          ],
+          "selected": "wan2.2_ti2v_5B_fp16.safetensors"
+        },
+        "vae": {
+          "alternatives": [
+            "wan2.2_vae.safetensors"
+          ],
+          "selected": "wan2.2_vae.safetensors"
+        }
+      },
+      "nodeCount": 12,
+      "outputNodeId": "99",
+      "outputType": "SaveVideo",
+      "recipeId": "wan-2.2-5b",
+      "scenario": "Image to video",
+      "seed": 424242,
+      "sha256": "0fac4789b693a191c9b637ceb086a064aa6f9c32973def3bdc95758b7c66ee22",
+      "sourceUrl": "https://docs.comfy.org/tutorials/video/wan/wan2_2"
+    }
+  ]
+}

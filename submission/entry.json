@@ -1,0 +1,41 @@
+{
+  "format": "tye-studio-challenge-entry",
+  "version": 1,
+  "competition": {
+    "name": "Open Source Higgsfield",
+    "requirementsUrl": "https://comfy.org/open-source-higgsfield/",
+    "submissionFormUrl": "https://form.typeform.com/to/V1dSQrkS",
+    "deadline": "2026-11-03T17:00:00Z"
+  },
+  "project": {
+    "name": "Tye Studio",
+    "summary": "A ComfyUI-powered workspace for image and video generation, layered image editing, durable versions, shot takes and sequence assembly.",
+    "repositoryUrl": "https://github.com/Halldon/tye-studio",
+    "workflowDirectory": "workflows/",
+    "localSetup": "npm run setup:local",
+    "hostedUrl": "https://tye-creator-studio.bouncy-tick-1320.chatgpt.site",
+    "hostedAccess": "Owner-private. Use the public source and local setup until reviewer access is explicitly arranged."
+  },
+  "materials": {
+    "demoVideoUrl": null,
+    "socialPostUrl": null,
+    "status": "Demo video and social post are excluded from the current implementation task."
+  },
+  "verification": {
+    "workflowStructure": "verified_offline",
+    "freshLocalSetup": "verified_fresh_install_build_migrate_and_persistence",
+    "successfulImageGeneration": "verification_in_progress",
+    "successfulVideoGeneration": "unverified"
+  },
+  "participation": {
+    "signupStatus": "delivery_retrying_not_confirmed",
+    "otherEntry": false,
+    "finalSubmission": "not_submitted",
+    "eligibilityAndFeaturePermission": "requires_submitter_review"
+  },
+  "categoryClaims": {
+    "main": "Best Overall",
+    "openWeightsOnly": "not_claimed_pending_execution_and_dependency_verification",
+    "providerBonuses": []
+  }
+}

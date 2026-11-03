@@ -1,0 +1,177 @@
+{
+  "1": {
+    "class_type": "UNETLoader",
+    "inputs": {
+      "unet_name": "qwen_image_edit_2511_fp8mixed.safetensors",
+      "weight_dtype": "default"
+    }
+  },
+  "2": {
+    "class_type": "CLIPLoader",
+    "inputs": {
+      "clip_name": "qwen_2.5_vl_7b_fp8_scaled.safetensors",
+      "device": "default",
+      "type": "qwen_image"
+    }
+  },
+  "3": {
+    "class_type": "VAELoader",
+    "inputs": {
+      "vae_name": "qwen_image_vae.safetensors"
+    }
+  },
+  "4": {
+    "class_type": "TextEncodeQwenImageEditPlus",
+    "inputs": {
+      "clip": [
+        "2",
+        0
+      ],
+      "image1": [
+        "12",
+        0
+      ],
+      "prompt": "Change the teapot to green ceramic. Preserve the composition and lighting.",
+      "vae": [
+        "3",
+        0
+      ]
+    }
+  },
+  "5": {
+    "class_type": "TextEncodeQwenImageEditPlus",
+    "inputs": {
+      "clip": [
+        "2",
+        0
+      ],
+      "image1": [
+        "12",
+        0
+      ],
+      "prompt": "",
+      "vae": [
+        "3",
+        0
+      ]
+    }
+  },
+  "6": {
+    "class_type": "ModelSamplingAuraFlow",
+    "inputs": {
+      "model": [
+        "1",
+        0
+      ],
+      "shift": 3.1
+    }
+  },
+  "7": {
+    "class_type": "CFGNorm",
+    "inputs": {
+      "model": [
+        "6",
+        0
+      ],
+      "strength": 1
+    }
+  },
+  "8": {
+    "class_type": "VAEEncode",
+    "inputs": {
+      "pixels": [
+        "12",
+        0
+      ],
+      "vae": [
+        "3",
+        0
+      ]
+    }
+  },
+  "9": {
+    "class_type": "KSampler",
+    "inputs": {
+      "cfg": 4,
+      "denoise": 1,
+      "latent_image": [
+        "8",
+        0
+      ],
+      "model": [
+        "7",
+        0
+      ],
+      "negative": [
+        "15",
+        0
+      ],
+      "positive": [
+        "14",
+        0
+      ],
+      "sampler_name": "euler",
+      "scheduler": "simple",
+      "seed": 424242,
+      "steps": 40
+    }
+  },
+  "12": {
+    "class_type": "FluxKontextImageScale",
+    "inputs": {
+      "image": [
+        "40",
+        0
+      ]
+    }
+  },
+  "14": {
+    "class_type": "FluxKontextMultiReferenceLatentMethod",
+    "inputs": {
+      "conditioning": [
+        "4",
+        0
+      ],
+      "reference_latents_method": "index_timestep_zero"
+    }
+  },
+  "15": {
+    "class_type": "FluxKontextMultiReferenceLatentMethod",
+    "inputs": {
+      "conditioning": [
+        "5",
+        0
+      ],
+      "reference_latents_method": "index_timestep_zero"
+    }
+  },
+  "20": {
+    "class_type": "VAEDecode",
+    "inputs": {
+      "samples": [
+        "9",
+        0
+      ],
+      "vae": [
+        "3",
+        0
+      ]
+    }
+  },
+  "40": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "tye-reference-1.png"
+    }
+  },
+  "99": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "filename_prefix": "TyeStudio/image",
+      "images": [
+        "20",
+        0
+      ]
+    }
+  }
+}

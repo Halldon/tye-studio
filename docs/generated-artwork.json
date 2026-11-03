@@ -1,0 +1,33 @@
+{
+  "generator": "Built-in image_gen",
+  "reference": "https://x.com/samstooff/status/2117241314127319313",
+  "intent": "Original artwork using reference texture and palette; no copied logos, text or UI.",
+  "originalSize": [
+    1536,
+    1024
+  ],
+  "servedSize": [
+    768,
+    512
+  ],
+  "assets": [
+    {
+      "key": "create-image",
+      "prompt": "Use case: stylized-concept. Asset type: one landscape 3:2 illustration for a compact starter card in an image/video creator app. Input image 1 is ONLY a texture and palette reference, not an edit target. Make an original composition inspired by its tactile hand-printed riso/crayon texture, imperfect cut-paper silhouettes, slightly misregistered overlapping inks and visible paper fibers. The screenshot includes browser/video controls: ignore ALL controls, text, logos and the white ring logo. Flat, material-rich graphic art, not a 3D render, not a vector icon. Full bleed, crisp large shapes with detailed dry pigment grain. Limited pastel palette: pale lilac, faded coral-orange, butter yellow, mint and dusty sky blue with a few charcoal ink marks. No text, letters, numbers, UI, borders, watermarks, white-ring brand symbol, gradients, glossy surfaces or stock iconography. Keep composition understandable at 260px wide.\nPrimary request: an abstract image-making collage. One broad dusty blue organic shape crosses a pale lilac paper field, with a cut-paper butter-yellow sun disk, soft coral curved patch, and a few mint contour marks. Balanced, spacious, playful printed-art composition; shapes cropped naturally at the edges. This is a tactile artwork, not an app screen or diagram.",
+      "original": "outputs/generated-artwork/create-image.png",
+      "served": "public/graphics/create-image.webp"
+    },
+    {
+      "key": "create-video",
+      "prompt": "Use case: stylized-concept. Asset type: one landscape 3:2 illustration for a compact starter card in an image/video creator app. Input image 1 is ONLY a texture and palette reference, not an edit target. Make an original composition inspired by its tactile hand-printed riso/crayon texture, imperfect cut-paper silhouettes, slightly misregistered overlapping inks and visible paper fibers. The screenshot includes browser/video controls: ignore ALL controls, text, logos and the white ring logo. Flat, material-rich graphic art, not a 3D render, not a vector icon. Full bleed, crisp large shapes with detailed dry pigment grain. Limited pastel palette: pale lilac, faded coral-orange, butter yellow, mint and dusty sky blue with a few charcoal ink marks. No text, letters, numbers, UI, borders, watermarks, white-ring brand symbol, gradients, glossy surfaces or stock iconography. Keep composition understandable at 260px wide.\nPrimary request: a tactile abstract motion collage. Three staggered, imperfect rectangular picture-like paper cutouts overlap along a gentle diagonal, alternating dusty blue, coral and pale lilac, with mint crayon swishes suggesting a frame-to-frame flow. Butter-yellow ground and a few charcoal dry-brush marks. Restrained composition, broad blocks; no play icon, no film sprockets, no text.",
+      "original": "outputs/generated-artwork/create-video.png",
+      "served": "public/graphics/create-video.webp"
+    },
+    {
+      "key": "edit-image",
+      "prompt": "Use case: stylized-concept. Asset type: one landscape 3:2 illustration for a compact starter card in an image/video creator app. Input image 1 is ONLY a texture and palette reference, not an edit target. Make an original composition inspired by its tactile hand-printed riso/crayon texture, imperfect cut-paper silhouettes, slightly misregistered overlapping inks and visible paper fibers. The screenshot includes browser/video controls: ignore ALL controls, text, logos and the white ring logo. Flat, material-rich graphic art, not a 3D render, not a vector icon. Full bleed, crisp large shapes with detailed dry pigment grain. Limited pastel palette: pale lilac, faded coral-orange, butter yellow, mint and dusty sky blue with a few charcoal ink marks. No text, letters, numbers, UI, borders, watermarks, white-ring brand symbol, gradients, glossy surfaces or stock iconography. Keep composition understandable at 260px wide.\nPrimary request: a tactile paper-layer editing collage. One torn ivory paper rectangle overlaps a broad lavender ink patch, crossed by a rough coral crescent and a mint hand-cut strip, with butter-yellow dry-pigment rubbing and a few charcoal pencil strokes. Clearly visible ragged fibers and ink grain. Suggest arranging and refining an image through paper layering; no pencil icon, no crop icon, no text.",
+      "original": "outputs/generated-artwork/edit-image.png",
+      "served": "public/graphics/edit-image.webp"
+    }
+  ]
+}

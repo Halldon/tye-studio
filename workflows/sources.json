@@ -1,0 +1,23 @@
+{
+  "accessedAt": "2026-11-02",
+  "scope": "Official current Comfy documentation used to check API format, model setup and selected native node contracts. No GPU execution or model download.",
+  "sources": [
+    { "url": "https://docs.comfy.org/development/api-development/workflow-api-format", "supports": "API node dictionaries use class_type and inputs; distinct from frontend save-format layout." },
+    { "url": "https://docs.comfy.org/tutorials/image/z-image/z-image-turbo", "supports": "Native Z-Image Turbo recipe and model/encoder/VAE folder setup." },
+    { "url": "https://docs.comfy.org/tutorials/flux/flux-2-klein", "supports": "Native Klein 4B generation/editing, four-step distilled recipe and model companions." },
+    { "url": "https://docs.comfy.org/tutorials/image/qwen/qwen-image-edit-2511", "supports": "Native Qwen 2511 edit recipe, BF16 diffusion option, text encoder, VAE and separate optional Lightning LoRA." },
+    { "url": "https://docs.comfy.org/tutorials/video/wan/wan2_2", "supports": "Native Wan2.2 TI2V 5B model, text encoder and VAE setup." },
+    { "url": "https://huggingface.co/Comfy-Org/Qwen-Image-Edit_ComfyUI/tree/main/split_files/diffusion_models", "supports": "Official Comfy-Org repack filenames, including FP8 mixed Qwen 2511." },
+    { "url": "https://docs.comfy.org/built-in-nodes/Wan22ImageToVideoLatent", "supports": "Width/height step 32, length step 4 with default 49, optional start_image.", "documentSourceFingerprint": "3d05980641eeef2e86df7a845aa8b2bd703882db98fe71adef2746ab34a9d717" },
+    { "url": "https://docs.comfy.org/built-in-nodes/CreateVideo", "supports": "Required IMAGE images and FLOAT fps inputs; VIDEO output.", "documentSourceFingerprint": "614285ac3a38eedb63fd72f8b70f776b441b1b043707f4b21f587f70e2e071fa" },
+    { "url": "https://docs.comfy.org/built-in-nodes/SaveVideo", "supports": "VIDEO and filename_prefix; dynamic format selector with nested codec selector; MP4 and H.264 choices.", "documentSourceFingerprint": "b8d3b6191a3e14ee305a7dd848c0988877a0b0ec8963daaff6568092a0939197" },
+    { "url": "https://docs.comfy.org/built-in-nodes/TextEncodeQwenImageEditPlus", "supports": "Optional image1, image2 and image3 reference inputs.", "documentSourceFingerprint": "5eea53a84045924b44d445244e6149b341188d22573aaaced87bac8a139dac96" },
+    { "url": "https://docs.comfy.org/built-in-nodes/FluxKontextMultiReferenceLatentMethod", "supports": "reference_latents_method supports index_timestep_zero.", "documentSourceFingerprint": "de2e3d34f9e47a90ff37300489bffef8082eb92deefbc2ce338b17b0d853ac77" },
+    { "url": "https://docs.comfy.org/built-in-nodes/Flux2Scheduler", "supports": "Width and height are actual scheduler inputs, permitting reference-derived linked dimensions.", "documentSourceFingerprint": "9606177f37f7bc03aef524623f03b7f24bcdc3d9327dcdf74863fe2befeb2b65" },
+    { "url": "https://docs.comfy.org/built-in-nodes/LoadImage", "supports": "Image loader returns IMAGE then alpha-related MASK outputs." },
+    { "url": "https://docs.comfy.org/built-in-nodes/ImageCompositeMasked", "supports": "Destination/source images, x/y offset, resize_source and optional MASK input." },
+    { "url": "https://docs.comfy.org/development/comfyui-server/comms_routes", "supports": "Raw server POST /prompt submission route." },
+    { "url": "https://docs.comfy.org/api-reference/v2/jobs/submit-a-workflow-for-execution", "supports": "v2 request workflow property; uploaded asset references use owned core/ASSET objects." },
+    { "url": "https://docs.comfy.org/development/api-development/sdks", "supports": "Official SDK workflow submission and asset upload handling; SDK version 0.5.0." }
+  ]
+}
