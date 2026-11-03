@@ -1,0 +1,45 @@
+{
+  "upstreamPromptId": "99aa772d-0563-4bd2-bb93-2c44a13ca07d",
+  "outcome": "success",
+  "transport": "Tye Studio \u2192 official @comfyorg/sdk/low \u2192 comfy-api-proxy 0.1.6 \u2192 ComfyUI core",
+  "engineCommit": "6b904b5fafd062effc1acbc46b1d3196922f7055",
+  "elapsedSeconds": 103.229,
+  "settings": {
+    "recipeId": "flux-klein-edit",
+    "steps": 4,
+    "seed": 424242,
+    "sampler": "euler",
+    "cfg": 1.0,
+    "referenceScaleMegapixels": 1.0,
+    "promptSha256": "75f6fd7e29e0704d5e281e8ab0c46a03cbc318a762e494a3863dac99319a70e9"
+  },
+  "referenceFiles": [
+    {
+      "filename": "image_00001_.png",
+      "bytes": 278550,
+      "sha256": "2388e171fdb59484af9bd561a2532a1e3b21c85af21b5b42338faf95ba0a2214"
+    }
+  ],
+  "outputs": [
+    {
+      "nodeId": "99",
+      "bytes": 1122499,
+      "sha256": "55096d4d4c04351f2aaed8fdc5e7b479e647e75125f4e46d7d2c51953366efc6",
+      "width": 1024,
+      "height": 1024
+    }
+  ],
+  "proxyStatus": "succeeded",
+  "proxyOutputIds": [
+    "eyJqIjogIjk5YWE3NzJkLTA1NjMtNGJkMi1iYjkzLTJjNDRhMTNjYTA3ZCIsICJmIjogImltYWdlXzAwMDAyXy5wbmciLCAicyI6ICJUeWVTdHVkaW8iLCAidCI6ICJvdXRwdXQifQ.jU1vpIz1dc7BzTgi1gcePUAjQ-ffNOrA7n2F-9YN0O8"
+  ],
+  "modelManifestFile": "model-manifest.json",
+  "provenance": "One reference edit submitted through Tye Studio UI; native and proxy terminal success checked read-only. App persistence is separate.",
+  "appPersistence": {
+    "status": "succeeded",
+    "savedInR2": true,
+    "downloadMatchesNative": true,
+    "parentLinkToOriginal": true,
+    "sha256": "55096d4d4c04351f2aaed8fdc5e7b479e647e75125f4e46d7d2c51953366efc6"
+  }
+}

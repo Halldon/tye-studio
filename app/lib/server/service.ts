@@ -127,7 +127,9 @@ async function importOutput(store: Store, bucket: R2Bucket, adapter: ComfyAdapte
   const id = `${row.id}-${token}`; const key = `outputs/${row.id}/${token}`;
   await bucket.put(key, bytes, { httpMetadata: { contentType: media.mimeType }, customMetadata: { ownerId: store.ownerId, assetId: id } });
   const p = JSON.parse(row.parameters_json) as GenerationRequest;
-  const asset: AssetRow = { id, owner_id: store.ownerId, project_id: row.project_id, job_id: row.id, parent_asset_id: p.parentAssetId || null, name: safeFileName(output.name), type: media.type, mime_type: media.mimeType, size: bytes.byteLength, r2_key: key, width: media.width ?? (media.type === "video" ? p.width || null : null), height: media.height ?? (media.type === "video" ? p.height || null : null), duration: media.type === "video" ? p.duration || null : null, starred: 0, source: "generation", source_output_id: output.id, created_at: new Date().toISOString() };
+  // The requested duration is a sampling target, not measured container metadata.
+  // Leave it unknown so the browser probes the encoded clip before Sequence use.
+  const asset: AssetRow = { id, owner_id: store.ownerId, project_id: row.project_id, job_id: row.id, parent_asset_id: p.parentAssetId || null, name: safeFileName(output.name), type: media.type, mime_type: media.mimeType, size: bytes.byteLength, r2_key: key, width: media.width ?? (media.type === "video" ? p.width || null : null), height: media.height ?? (media.type === "video" ? p.height || null : null), duration: null, starred: 0, source: "generation", source_output_id: output.id, created_at: new Date().toISOString() };
   await store.insertAsset(asset); return id;
 }
 

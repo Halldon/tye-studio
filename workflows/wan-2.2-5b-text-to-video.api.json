@@ -117,12 +117,8 @@
     "class_type": "SaveVideo",
     "inputs": {
       "filename_prefix": "TyeStudio/video",
-      "format": {
-        "codec": {
-          "codec": "h264"
-        },
-        "format": "mp4"
-      },
+      "format": "mp4",
+      "format.codec": "h264",
       "video": [
         "21",
         0

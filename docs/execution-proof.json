@@ -1,0 +1,67 @@
+{
+  "upstreamPromptId": "3530da98-b96d-4afd-af80-0a3dd3e04118",
+  "outcome": "success",
+  "engineCommit": "6b904b5fafd062effc1acbc46b1d3196922f7055",
+  "engineVersion": "0.43.0",
+  "torchVersion": "2.15.0",
+  "device": "mps",
+  "startedAtMs": 1793671679500,
+  "completedAtMs": 1793671711334,
+  "elapsedSeconds": 31.834,
+  "settings": {
+    "recipeId": "flux-klein-4b",
+    "width": 512,
+    "height": 512,
+    "steps": 4,
+    "seed": 424242,
+    "sampler": "euler",
+    "cfg": 1.0,
+    "promptSha256": "3f4a7b15337817b2b64e1abd7b78e59d282ab78da4e108e52fe2227c777ee124"
+  },
+  "models": [
+    {
+      "repository": "black-forest-labs/FLUX.2-klein-4b-fp8",
+      "revision": "5b4408e59397a4a37ccb46afe426d8ed86379441",
+      "source": "flux-2-klein-4b-fp8.safetensors",
+      "target": "diffusion_models/flux-2-klein-4b-fp8.safetensors",
+      "bytes": 4070624520,
+      "sha256": "97ed34fe0567e436200f2faee3939b88f2b5d99f8af2a4dc16532c4245c0ccb6",
+      "license": "apache-2.0"
+    },
+    {
+      "repository": "Comfy-Org/flux2-klein-4B",
+      "revision": "5b3abca5c0dc1ecd4eaf3340868d09063fc1c965",
+      "source": "split_files/text_encoders/qwen_3_4b.safetensors",
+      "target": "text_encoders/qwen_3_4b.safetensors",
+      "bytes": 8044982048,
+      "sha256": "6c671498573ac2f7a5501502ccce8d2b08ea6ca2f661c458e708f36b36edfc5a",
+      "license": "apache-2.0"
+    },
+    {
+      "repository": "black-forest-labs/FLUX.2-klein-4B",
+      "revision": "e7b7dc27f91deacad38e78976d1f2b499d76a294",
+      "source": "vae/diffusion_pytorch_model.safetensors",
+      "target": "vae/flux2-vae.safetensors",
+      "bytes": 168120878,
+      "sha256": "ca70d2202afe6415bdbcb8793ba8cd99fd159cfe6192381504d6c4d3036e0f04",
+      "license": "apache-2.0"
+    }
+  ],
+  "outputs": [
+    {
+      "nodeId": "99",
+      "bytes": 278550,
+      "sha256": "2388e171fdb59484af9bd561a2532a1e3b21c85af21b5b42338faf95ba0a2214",
+      "width": 512,
+      "height": 512
+    }
+  ],
+  "provenance": "One image generated through Tye Studio UI/API and raw local Comfy. The app reconciled the successful job, persisted actual output bytes and served a byte-identical download. This does not verify Cloud API eligibility or every supported model.",
+  "appPersistence": {
+    "status": "succeeded",
+    "savedInR2": true,
+    "downloadMatchesNative": true,
+    "sha256": "2388e171fdb59484af9bd561a2532a1e3b21c85af21b5b42338faf95ba0a2214",
+    "survivedAppRestart": true
+  }
+}

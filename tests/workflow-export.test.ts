@@ -81,7 +81,33 @@ test("Wan variants use 4n+1 frames, optional image input and current native vide
   assert.deepEqual(image["21"].inputs.images, ["20", 0]);
   assert.equal(image["21"].inputs.fps, 24);
   assert.deepEqual(image["99"].inputs.video, ["21", 0]);
-  assert.deepEqual(image["99"].inputs.format, { format: "mp4", codec: { codec: "h264" } });
+  assert.equal(image["99"].inputs.format, "mp4");
+  assert.equal(image["99"].inputs["format.codec"], "h264");
+});
+
+test("SaveVideo DynamicCombo wire selectors reconstruct the required execution format argument", async () => {
+  // Pinned official core 6b904b5f: DynamicCombo._expand_schema_for_dynamic
+  // matches a scalar option key at each dotted API path. build_nested_inputs
+  // then nests selectors, repeating each selector's final component.
+  // A nested execute() argument sent on the wire passes validate_prompt but is
+  // silently omitted here, which caused the first native Wan export to fail.
+  const options: Record<string, Record<string, object>> = { mp4: { h264: {} } };
+  function executionFormat(inputs: Record<string, unknown>) {
+    if (typeof inputs.format !== "string" || !Object.hasOwn(options, inputs.format)) return undefined;
+    const codec = inputs["format.codec"];
+    if (typeof codec !== "string" || !Object.hasOwn(options[inputs.format], codec)) return undefined;
+    return { format: inputs.format, codec: { codec } };
+  }
+  const artifacts = await generatedArtifacts();
+  for (const file of ["wan-2.2-5b-text-to-video.api.json", "wan-2.2-5b-image-to-video.api.json"]) {
+    const graph: Graph = JSON.parse(artifacts.get(file)!);
+    assert.deepEqual(executionFormat(graph["99"].inputs), { format: "mp4", codec: { codec: "h264" } });
+    const malformed = structuredClone(graph);
+    malformed["99"].inputs.format = { format: "mp4", codec: { codec: "h264" } };
+    delete malformed["99"].inputs["format.codec"];
+    assert.throws(() => validateGraph(malformed), /flat.*DynamicCombo/);
+  }
+  assert.equal(executionFormat({ format: { format: "mp4", codec: { codec: "h264" } } }), undefined, "execute() dictionaries must never be sent as DynamicCombo wire selectors");
 });
 
 test("graph checks reject broken links, cycles, disconnected nodes and non-JSON values", async () => {

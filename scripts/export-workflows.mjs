@@ -79,6 +79,7 @@ export function validateGraph(graph) {
       else if (typeof value === "number" && !Number.isFinite(value)) throw new Error(`Non-finite input at ${at}.`);
     }
     inspect(node.inputs, `${id}.inputs`);
+    if (node.class_type === "SaveVideo" && (typeof node.inputs.format !== "string" || typeof node.inputs["format.codec"] !== "string")) throw new Error("SaveVideo requires flat format and format.codec DynamicCombo wire selectors, not nested execute arguments.");
     dependencies.set(id, links);
     if (["SaveImage", "SaveVideo"].includes(node.class_type)) outputs.push(id);
   }

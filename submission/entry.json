@@ -25,9 +25,9 @@
     "workflowStructure": "verified_offline",
     "freshLocalSetup": "verified_fresh_install_build_migrate_and_persistence",
     "successfulImageGeneration": "verified_local_app_api_saved_png",
-    "successfulVideoGeneration": "unverified",
-    "githubCI": "passed_linux_install_83_tests_typecheck_workflows_build_migrations",
-    "githubCIUrl": "https://github.com/Halldon/tye-studio/actions/runs/41563840444",
+    "successfulVideoGeneration": "verified_app_official_sdk_proxy_wan_mp4",
+    "githubCI": "passed_linux_node22_13_and25_install_83_tests_typecheck_workflows_build_migrations",
+    "githubCIUrl": "https://github.com/Halldon/tye-studio/actions/runs/41564485287",
     "imageProof": {
       "model": "FLUX.2 Klein 4B",
       "width": 512,
@@ -37,7 +37,36 @@
       "nativeElapsedSeconds": 31.834,
       "bytes": 278550,
       "sha256": "2388e171fdb59484af9bd561a2532a1e3b21c85af21b5b42338faf95ba0a2214"
-    }
+    },
+    "successfulReferenceEdit": "verified_app_official_sdk_proxy_native_core_saved_png",
+    "referenceEditProof": {
+      "model": "FLUX.2 Klein Edit",
+      "width": 1024,
+      "height": 1024,
+      "steps": 4,
+      "seed": 424242,
+      "bytes": 1122499,
+      "sha256": "55096d4d4c04351f2aaed8fdc5e7b479e647e75125f4e46d7d2c51953366efc6",
+      "parentLinkVerified": true
+    },
+    "videoProof": {
+      "model": "Wan 2.2 TI2V 5B",
+      "width": 256,
+      "height": 256,
+      "frames": 17,
+      "fps": 16,
+      "durationSeconds": 1.062012,
+      "steps": 4,
+      "seed": 424242,
+      "bytes": 143290,
+      "sha256": "5b911e8cb1aaf9200b9aad40edd6fd99889d26cf420d96b93e4835cad75831a4",
+      "parentLinkVerified": true,
+      "firstExportFailureRetained": true,
+      "correctedRetryReusedActualInferenceCache": true,
+      "generatedDurationField": null,
+      "sequenceOutPointSeconds": 1.062012
+    },
+    "localTests": 85
   },
   "participation": {
     "signupStatus": "delivery_retrying_not_confirmed",

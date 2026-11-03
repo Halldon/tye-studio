@@ -8,6 +8,8 @@ Source: [Halldon/tye-studio](https://github.com/Halldon/tye-studio). [GitHub CI]
 
 Standalone ComfyUI API graphs, model requirements and engine setup are documented in [workflows/README.md](workflows/README.md). Run `npm run workflows:check` to verify the checked-in graphs match the app's builder.
 
+[Local engine setup](docs/local-engine.md) records the pinned ComfyUI/model configuration used for real FLUX generation and reference editing. [Image execution evidence](docs/execution-proof.json) and [SDK edit evidence](docs/reference-edit-proof.json) distinguish completed runs and persisted bytes from offline graph checks.
+
 ## Features
 
 - Projects with automatic saving, a private media library, favorites and portable project ZIP import/export.

@@ -97,7 +97,8 @@ test("native recipe graphs wire references and transparent-selected mask without
   assert.throws(() => r.validateGeneration({ recipeId: "wan-2.2-5b", prompt: "x", duration: 8 }));
   const video = r.buildWorkflow(r.validateGeneration({ recipeId: "wan-2.2-5b", prompt: "Camera moves", duration: 2, fps: 24 }));
   assert.equal(video["7"].inputs.length, 49); assert.equal(video["99"].class_type, "SaveVideo");
-  assert.deepEqual(video["99"].inputs.format, { format: "mp4", codec: { codec: "h264" } });
+  assert.equal(video["99"].inputs.format, "mp4");
+  assert.equal(video["99"].inputs["format.codec"], "h264");
 });
 
 test("engine state never treats node output or unknown status as successful completion", async () => {
@@ -204,6 +205,34 @@ test("Cloud connection verifies authenticated v2 read access before using public
     const denied=await adapter.discover(true);assert.equal(denied.status.connected,false);assert.equal(metadataReads,0);assert.match(denied.status.message,/rejected.*API key/i);
     allow=true;const verified=await adapter.discover(true);assert.equal(verified.status.connected,true);assert.equal(metadataReads,1);assert.match(verified.status.message,/eligibility.*submit/i);
   }finally{globalThis.fetch=original;}
+});
+
+test("generated video duration stays unknown instead of copying the request; measured upload duration is preserved", async () => {
+  const {db,sqlite}=await memoryDb();const bucket=memoryBucket();
+  const service=await sourceModule("service",{[resolve(serverRoot,"context.ts")]:contextStub});
+  const {Store}=await sourceModule("store");const {validateGeneration}=await sourceModule("recipes");
+  const store=new Store(db,"alice");const bindings={DB:db,BUCKET:bucket,COMFY_BASE_URL:"http://127.0.0.1:8189"};
+  const p=validateGeneration({recipeId:"wan-2.2-5b",prompt:"Camera moves",width:256,height:256,duration:1,fps:16,steps:4,seed:42});
+  const saved=await store.createJob(p,"proxy-v2",bindings.COMFY_BASE_URL);
+  await store.updateJob(saved.row.id,{engineJobId:"engine-video",status:"running"});
+  // Signature fixture only: inspectMedia does not parse a container duration.
+  const bytes=new Uint8Array([0,0,0,24,102,116,121,112,105,115,111,109]);
+  const original=globalThis.fetch;globalThis.fetch=(async(input:RequestInfo|URL)=>{
+    const url=String(input);
+    if(url.endsWith("/api/v2/jobs/engine-video"))return Response.json({id:"engine-video",status:"succeeded",outputs:[{id:"video-out",name:"clip.mp4",type:"image",content_type:"video/mp4",url:"http://127.0.0.1:8189/api/v2/assets/video-out/content"}]});
+    if(url.endsWith("/assets/video-out/content"))return new Response(bytes,{headers:{"Content-Type":"video/mp4"}});
+    throw Error("Unexpected metadata test request");
+  }) as typeof fetch;
+  try{
+    const completed=await service.reconcileJob(bindings,"alice",saved.row.id);assert.equal(completed.status,"succeeded");
+    const generated=await store.asset(completed.outputAssetIds[0]);
+    assert.equal(generated.type,"video");assert.equal(generated.mime_type,"video/mp4");
+    assert.equal(generated.duration,null);assert.equal(completed.parameters.duration,1);
+    assert.equal(generated.width,256);assert.equal(generated.height,256);
+    const form=new FormData();form.append("file",new Blob([bytes],{type:"video/mp4"}),"measured.mp4");form.append("duration","1.062012");
+    const measured=await service.uploadAsset(bindings,"alice",new Request("http://localhost/api/assets",{method:"POST",body:form}));
+    assert.equal(measured.duration,1.062012);
+  }finally{globalThis.fetch=original;sqlite.close();}
 });
 
 test("media body limits cover missing or dishonest length and reject active content", async () => {

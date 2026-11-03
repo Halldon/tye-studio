@@ -4,7 +4,7 @@
   "schemaVersion": 1,
   "source": {
     "file": "app/lib/server/recipes.ts",
-    "sha256": "c0e9ac24aff385e4b3c0745a36b85883a407a748bea0435c53b7de0ca12f0649"
+    "sha256": "433f8fa7fdafd5437dee1b221ad5baa1f004ed27c847036594ae97521e581029"
   },
   "verification": "Offline structural and deterministic export checks only; no engine execution or GPU compatibility claim.",
   "workflows": [
@@ -310,7 +310,7 @@
       "recipeId": "wan-2.2-5b",
       "scenario": "Text to video",
       "seed": 424242,
-      "sha256": "5ca7e7203d97e48a08090ad4b148ecb659daec9ebe7a980b65334ed56d89f496",
+      "sha256": "5b45c93b555e18d8c59c1cecf64c6cbcfb6ac4dc016a5b34adfdb13d82994adc",
       "sourceUrl": "https://docs.comfy.org/tutorials/video/wan/wan2_2"
     },
     {
@@ -355,7 +355,7 @@
       "recipeId": "wan-2.2-5b",
       "scenario": "Image to video",
       "seed": 424242,
-      "sha256": "0fac4789b693a191c9b637ceb086a064aa6f9c32973def3bdc95758b7c66ee22",
+      "sha256": "265dfe34b684ca8c5ad77337dfc4dcbd4dac735491805628e3a4ed4c058c059e",
       "sourceUrl": "https://docs.comfy.org/tutorials/video/wan/wan2_2"
     }
   ]

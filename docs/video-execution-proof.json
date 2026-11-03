@@ -1,0 +1,132 @@
+{
+  "promptId": "a59c7439-4ade-4101-ad2c-90257a666529",
+  "nativeStatus": "success",
+  "proxyStatus": "succeeded",
+  "createdAt": "2026-11-03T02:24:50.319732+00:00",
+  "nativeExecutionSeconds": 0.069,
+  "cachedNodeIds": [
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "20",
+    "21",
+    "40"
+  ],
+  "note": "Deliberate corrected retry reused actual Wan inference cached from the earlier failed SaveVideo run, then encoded and saved MP4. No monitor submission. Earlier failed run remains recorded.",
+  "saveVideoWireInputs": {
+    "video": [
+      "21",
+      0
+    ],
+    "filename_prefix": "TyeStudio/video",
+    "format": "mp4",
+    "format.codec": "h264"
+  },
+  "generationParameters": {
+    "width": 256,
+    "height": 256,
+    "frames": 17,
+    "fps": 16.0,
+    "steps": 4,
+    "seed": 424242
+  },
+  "output": {
+    "bytes": 143290,
+    "sha256": "5b911e8cb1aaf9200b9aad40edd6fd99889d26cf420d96b93e4835cad75831a4",
+    "nativeMetadata": {
+      "kind": "video",
+      "width": 256,
+      "height": 256,
+      "duration": 1.06201171875,
+      "fps": 16.0,
+      "frame_count": 17
+    },
+    "ffprobe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "index": 0,
+          "codec_name": "h264",
+          "codec_type": "video",
+          "width": 256,
+          "height": 256,
+          "pix_fmt": "yuv420p",
+          "r_frame_rate": "16/1",
+          "avg_frame_rate": "16/1",
+          "duration": "1.062012",
+          "nb_frames": "17",
+          "nb_read_frames": "17"
+        }
+      ],
+      "format": {
+        "format_name": "mov,mp4,m4a,3gp,3g2,mj2",
+        "duration": "1.062012",
+        "size": "143290"
+      }
+    }
+  },
+  "proxyOutput": {
+    "name": "video_00001_.mp4",
+    "type": "image",
+    "contentType": "video/mp4",
+    "downloadedBytes": 143290,
+    "sha256": "5b911e8cb1aaf9200b9aad40edd6fd99889d26cf420d96b93e4835cad75831a4",
+    "bytesMatchNative": true
+  },
+  "submittedByMonitor": false,
+  "appPersistence": {
+    "status": "succeeded",
+    "type": "video",
+    "mimeType": "video/mp4",
+    "savedInR2": true,
+    "downloadMatchesNative": true,
+    "parentLinkToEditedImage": true,
+    "browserVideoReadyState": 4,
+    "browserDurationSeconds": 1.062012,
+    "sha256": "5b911e8cb1aaf9200b9aad40edd6fd99889d26cf420d96b93e4835cad75831a4",
+    "generatedDurationFieldAfterFix": null,
+    "sequenceOutPointSeconds": 1.062012,
+    "metadataFixVerifiedByDeliberateCachedExport": true
+  },
+  "modelProvenance": [
+    {
+      "repository": "Comfy-Org/Wan_2.2_ComfyUI_Repackaged",
+      "revision": "ee6f4a40737a995bf5818954cfce6d59443b0f04",
+      "source": "split_files/diffusion_models/wan2.2_ti2v_5B_fp16.safetensors",
+      "target": "diffusion_models/wan2.2_ti2v_5B_fp16.safetensors",
+      "bytes": 9999658848,
+      "sha256": "456f901338bd9eadbded3828b819109a9b68e8a525ca5cf8d0049a69fcfeca1e",
+      "license": "apache-2.0",
+      "gated": false,
+      "source_url": "https://huggingface.co/Comfy-Org/Wan_2.2_ComfyUI_Repackaged/blob/ee6f4a40737a995bf5818954cfce6d59443b0f04/split_files/diffusion_models/wan2.2_ti2v_5B_fp16.safetensors"
+    },
+    {
+      "repository": "Comfy-Org/Wan_2.2_ComfyUI_Repackaged",
+      "revision": "ee6f4a40737a995bf5818954cfce6d59443b0f04",
+      "source": "split_files/text_encoders/umt5_xxl_fp8_e4m3fn_scaled.safetensors",
+      "target": "text_encoders/umt5_xxl_fp8_e4m3fn_scaled.safetensors",
+      "bytes": 6735906897,
+      "sha256": "c3355d30191f1f066b26d93fba017ae9809dce6c627dda5f6a66eaa651204f68",
+      "license": "apache-2.0",
+      "gated": false,
+      "source_url": "https://huggingface.co/Comfy-Org/Wan_2.2_ComfyUI_Repackaged/blob/ee6f4a40737a995bf5818954cfce6d59443b0f04/split_files/text_encoders/umt5_xxl_fp8_e4m3fn_scaled.safetensors"
+    },
+    {
+      "repository": "Comfy-Org/Wan_2.2_ComfyUI_Repackaged",
+      "revision": "ee6f4a40737a995bf5818954cfce6d59443b0f04",
+      "source": "split_files/vae/wan2.2_vae.safetensors",
+      "target": "vae/wan2.2_vae.safetensors",
+      "bytes": 1409400960,
+      "sha256": "e40321bd36b9709991dae2530eb4ac303dd168276980d3e9bc4b6e2b75fed156",
+      "license": "apache-2.0",
+      "gated": false,
+      "source_url": "https://huggingface.co/Comfy-Org/Wan_2.2_ComfyUI_Repackaged/blob/ee6f4a40737a995bf5818954cfce6d59443b0f04/split_files/vae/wan2.2_vae.safetensors"
+    }
+  ]
+}

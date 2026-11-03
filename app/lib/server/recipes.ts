@@ -114,7 +114,9 @@ export function buildWorkflow(p: GenerationRequest, filenames: unknown[] = [], c
   }
   if (recipe.kind === "video") {
     const video = add("21", "CreateVideo", { images: output, fps: p.fps || 24 });
-    add("99", "SaveVideo", { video, filename_prefix: "TyeStudio/video", format: { format: "mp4", codec: { codec: "h264" } } });
+    // DynamicCombo selectors are flat, dotted API inputs. Core reconstructs
+    // {format: "mp4", codec: {codec: "h264"}} only when calling execute().
+    add("99", "SaveVideo", { video, filename_prefix: "TyeStudio/video", format: "mp4", "format.codec": "h264" });
   } else add("99", "SaveImage", { images: output, filename_prefix: "TyeStudio/image" });
   return g;
 }

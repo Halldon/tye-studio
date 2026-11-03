@@ -18,6 +18,8 @@
     { "url": "https://docs.comfy.org/built-in-nodes/ImageCompositeMasked", "supports": "Destination/source images, x/y offset, resize_source and optional MASK input." },
     { "url": "https://docs.comfy.org/development/comfyui-server/comms_routes", "supports": "Raw server POST /prompt submission route." },
     { "url": "https://docs.comfy.org/api-reference/v2/jobs/submit-a-workflow-for-execution", "supports": "v2 request workflow property; uploaded asset references use owned core/ASSET objects." },
-    { "url": "https://docs.comfy.org/development/api-development/sdks", "supports": "Official SDK workflow submission and asset upload handling; SDK version 0.5.0." }
+    { "url": "https://docs.comfy.org/development/api-development/sdks", "supports": "Official SDK workflow submission and asset upload handling; SDK version 0.5.0." },
+    { "url": "https://github.com/Comfy-Org/ComfyUI/blob/6b904b5fafd062effc1acbc46b1d3196922f7055/comfy_api/latest/_io.py", "supports": "Pinned local source inspection: DynamicCombo._expand_schema_for_dynamic matches flat scalar option keys; parse_class_inputs uses dotted paths; build_nested_inputs reconstructs nested execute arguments." },
+    { "url": "https://github.com/Comfy-Org/ComfyUI/blob/6b904b5fafd062effc1acbc46b1d3196922f7055/comfy_extras/nodes_video.py", "supports": "Pinned local source inspection: SaveVideo requires format execution argument and nests codec selector under the format API selector." }
   ]
 }
